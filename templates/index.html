@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Index</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+	<!-- #Jumbo -->
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h1 class="display-4">Flights</h1>
+	    <p class="lead">Click any Flights from the drop downs and enter your name to register</p>
+	  </div>
+	</div>
+
+
+	<!-- #Container -->
+	<div class="container">
+
+	<!-- # Drop down -->
+	<form action="{{ url_for('putdb')}}" method="post">  <!-- #Important action the url next going -->
+	<div class="form-group">
+      <label for="sel1">Select list (select one):</label>
+      <select class="form-control" name="flight.id">      <!-- #The variable from the html to app.py -->
+      	{% for flight in flights %}
+        <option value="{{ flight.id }}">{{ flight.origin }} to {{ flight.destination }} </option> 
+        {% endfor %}
+        <!-- <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option> -->
+      </select>
+
+
+	<!-- <form action="{{ url_for('putdb')}}" method="post"> -->
+	<!-- <select > -->   <!-- 
+		## If want get the var from html to app.py
+		## Get it using the name="variable"
+		## variable in the tag < values >
+		## If send to the app.py 
+		## Use the same things name = value -->
+    <!-- </select> -->
+
+    <br>
+     <div class="form-group">
+        <input class="form-control" name="value">
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </form>
+    <h1>Or!!!!</h1>
+    	<a href="{{ url_for('flights') }}" class="btn btn-info" role="button">Flights</a> 
+    	<!-- #Create the button element  using the a <tag> -->
+    </div>
+
+	</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+	<!-- ## It's and single tuple or list 
+	## No Need to worry -->
+	{% block body %}
+	<h1>Flights</h1>
+	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Origin</th>
+        <th>Destination</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ flight.id }}</td>
+        <td>{{ flight.origin }}</td>
+        <td>{{ flight.destination }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+	<h1>Passengers</h1>
+	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Passengers Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in passengers %}
+      <tr>
+        <td>{{ i.name }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+    <form action="{{ url_for('delent') }}" method="post">
+      <input type="text" class="form-control" name="del_val" placeholder="Enter the name to delete">
+      <br>
+      <button type="submit" class="btn btn-danger">Submit</button>
+    </div>
+    </form>  
+	{% endblock %}
+	
