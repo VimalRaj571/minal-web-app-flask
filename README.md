@@ -1,11 +1,11 @@
 # Minal Web app and API 
-Basic web app to make the CRUD in postgres using the Raw SQL....!
+Basic web app to make the CRUD in Postgres using the Raw SQL....!
 
-Very Basic web app to make the create,update,delete opertion on the postgresSQL using the RAW 
+Very Basic web app to make the create, update, delete operations on the PostgreSQL using the RAW 
 Query and SQLAlchemy
 
-# Local Developement
+# Local Development
 
-git clone
+git clone <url-of-this-repo>
 
 run flask
